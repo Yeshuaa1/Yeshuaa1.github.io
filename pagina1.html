@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus é o único Caminho</title>
+    <link rel="icon" type="image/png" href="img.bt/logo.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+            background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .sidebar {
+            width: 30%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content {
+            width: 70%;
+            padding: 20px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #000;
+            font-style: italic;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .button-container button, .back-button {
+            background-color: #ffffff;
+            color: #271930;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 80%;
+        }
+
+        .button-container button:hover, .back-button:hover {
+            background: #402850;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .back-button {
+            margin-top: 20px;
+            color: #fcfafd;
+            background-color: #402850;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h1>Ensinamentos Bíblicos</h1>
+        <p>Escolha uma opção:</p>
+        <div class="button-container">
+            <button onclick="showContent('Confiança em Deus e Fé')">Confiança em Deus e Fé</button>
+            <button onclick="showContent('Amor e Perdão')">Amor e Perdão</button>
+            <button onclick="showContent('Obediência e Santidade')">Obediência e Santidade</button>
+            <button onclick="showContent('Sabedoria e Entendimento')">Sabedoria e Entendimento</button>
+            <button onclick="showContent('Promessas de Deus')">Promessas de Deus</button>
+            <button onclick="showContent('Perseverança e Esperança')">Perseverança e Esperança</button>
+            <button onclick="showContent('Justiça e Integridade')">Justiça e Integridade</button>
+            <button onclick="showContent('Serviço e Generosidade')">Serviço e Generosidade</button>
+            <a href="index.html" class="back-button">Voltar</a>
+        </div>
+    </div>
+
+    <div class="content" id="content">
+        <h2>Bem-vindo!</h2>
+        <p>Escolha um ensinamento na lateral para visualizar.</p>
+    </div>
+
+    <script>
+        const contentData = {
+            "Confiança em Deus e Fé": `<h2>Confiança em Deus e Fé</h2>
+                <p><strong>Gênesis 15:1-6</strong> Depois destas coisas, veio a palavra do Senhor a Abrão...</p>
+                <p><strong>Êxodo 14:13-14</strong> Moisés, porém, disse ao povo: Não temais...</p>
+                <p><strong>Êxodo 33:14</strong> Disse, pois, o Senhor: A minha presença irá contigo...</p>
+                <p><strong>Números 14:8-9</strong> Se o Senhor se agradar de nós...</p>
+                <p><strong>Deuteronômio 31:6</strong> Esforçai-vos e animai-vos...</p>
+                <p><strong>Salmos 23:1-4</strong> O Senhor é o meu pastor...</p>
+                <p><strong>Salmos 27:1-3</strong> O Senhor é a minha luz e a minha salvação...</p>
+                <p><strong>Salmos 46:1-3</strong> Deus é o nosso refúgio e fortaleza...</p>
+                <p><strong>Provérbios 3:5-6</strong> Confia no Senhor de todo o teu coração...</p>
+                <p><strong>Isaías 26:3-4</strong> Tu conservarás em paz aquele cuja mente está firme em ti...</p>
+                <p><strong>Isaías 41:10</strong> Não temas, porque eu sou contigo...</p>
+                <p><strong>Jeremias 17:7-8</strong> Bendito o varão que confia no Senhor...</p>
+                <p><strong>Daniel 3:16-18</strong> Responderam Sadraque, Mesaque e Abede-Nego...</p>
+                <p><strong>Filipenses 4:13</strong> Posso todas as coisas naquele que me fortalece.</p>`,
+            "Amor e Perdão": `<h2>Amor e Perdão</h2>
+                <p><strong>Levítico 19:18</strong>...</p>
+                <p><strong>Levítico 19:33-34</strong>...</p>
+                <p><strong>Mateus 5:43-48</strong>...</p>
+                <p><strong>Mateus 7:7-12</strong>...</p>
+                <p><strong>Lucas 6:27-36</strong>...</p>
+                <p><strong>Lucas 10:25-37</strong>...</p>
+                <p><strong>1 João 3:11-18</strong>...</p>
+                <p><strong>1 João 4:7-11</strong>...</p>
+                <p><strong>Efésios 4:29-32</strong>...</p>`,
+        };
+
+        function showContent(topic) {
+            let contentDiv = document.getElementById("content");
+            let text = contentData[topic] || "Conteúdo não encontrado.";
+            contentDiv.innerHTML = text;
+        }
+    </script>
+</body>
+
+</html>

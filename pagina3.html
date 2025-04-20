@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus é o único Caminho</title>
+    <link rel="icon" type="image/png" href="img.bt/logo.png">
+    <link rel="stylesheet" href="pagina3.css">
+</head>
+<body>
+    <h1>Oração e Jejum</h1>
+    <p>Descubra a importância da oração e do jejum para fortalecer sua caminhada com Deus.</p>
+
+    <div class="container">
+        <!-- Seção 1: Oração -->
+        <div class="section">
+            <h2>Oração</h2>
+            <p>A oração é a comunicação direta com Deus. Devemos orar com fé e humildade.</p>
+            <p><strong>Versículos sobre oração:</strong></p>
+            <ul>
+                <li><b>1 Tessalonicenses 5:17</b> - "Orem sem cessar."</li>
+                <li><b>Mateus 6:6</b> - "Quando você orar, vá para seu quarto, feche a porta e ore a seu Pai, que está no secreto."</li>
+                <li><b>Filipenses 4:6</b> - "Não andem ansiosos por coisa alguma, mas em tudo, pela oração e súplicas, com ação de graças, apresentem seus pedidos a Deus."</li>
+            </ul>
+        </div>
+
+        <!-- Seção 2: Tipos de Oração -->
+        <div class="section">
+            <h2>Tipos de Oração</h2>
+            <ul>
+                <li><b>Oração de Adoração</b> - Expressa amor e reverência a Deus. <i>(Salmo 95:6)</i></li>
+                <li><b>Oração de Confissão</b> - Pedir perdão pelos pecados. <i>(1 João 1:9)</i></li>
+                <li><b>Oração de Intercessão</b> - Orar pelos outros. <i>(1 Timóteo 2:1)</i></li>
+                <li><b>Oração de Ação de Graças</b> - Agradecer a Deus por Suas bênçãos. <i>(1 Tessalonicenses 5:18)</i></li>
+                <li><b>Oração de Petição</b> - Pedir algo a Deus. <i>(Mateus 7:7)</i></li>
+            </ul>
+        </div>
+
+        <!-- Seção 3: Jejum -->
+        <div class="section">
+            <h2>Jejum</h2>
+            <p>O jejum bíblico é um tempo de consagração e busca por Deus.</p>
+            <p><strong>Versículos sobre jejum:</strong></p>
+            <ul>
+                <li><b>Mateus 6:16-18</b> - Jesus ensina que o jejum deve ser feito de forma discreta, para Deus e não para os homens.</li>
+                <li><b>Isaías 58:6</b> - "O jejum que desejo não é este: soltar as correntes da injustiça, desatar as cordas do jugo, pôr em liberdade os oprimidos e romper todo jugo?"</li>
+                <li><b>Atos 13:2</b> - Os discípulos jejuavam antes de tomar decisões importantes.</li>
+            </ul>
+        </div>
+
+        <!-- Seção 4: Tipos de Jejum -->
+        <div class="section">
+            <h2>Tipos de Jejum</h2>
+            <ul>
+                <li><b>Jejum Completo</b> - Sem alimentos e bebidas. <i>(Ester 4:16)</i></li>
+                <li><b>Jejum Parcial</b> - Apenas certos tipos de alimentos. <i>(Daniel 10:3)</i></li>
+                <li><b>Jejum de Propósito</b> - Para consagração e busca espiritual. <i>(Lucas 4:2)</i></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Efeito de partículas -->
+<canvas class="particles"></canvas>
+
+<script>
+    const canvas = document.querySelector(".particles");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray = [];
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 1.5 - 0.75;
+            this.speedY = Math.random() * 1.5 - 0.75;
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.size > 0.2) this.size -= 0.02;
+        }
+
+        draw() {
+            ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function initParticles() {
+        particlesArray = [];
+        for (let i = 0; i < 100; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+
+            if (particlesArray[i].size <= 0.2) {
+                particlesArray.splice(i, 1);
+                particlesArray.push(new Particle());
+            }
+        }
+
+        requestAnimationFrame(animateParticles);
+    }
+
+    window.addEventListener("resize", function () {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+    });
+
+    initParticles();
+    animateParticles();
+</script>
+
+</body>
+<a href="index.html">Voltar</a>
+</html>

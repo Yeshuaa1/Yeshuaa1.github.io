@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Configuração do fundo com cor sólida e partículas */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Partículas animadas */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Animação de entrada para os elementos */
+h1, h2, p, .section, a {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Delay para cada elemento */
+h1 { animation-delay: 0.2s; }
+p { animation-delay: 0.4s; }
+.section { animation-delay: 0.6s; }
+a { animation-delay: 0.8s; }
+
+/* Estilo dos títulos */
+h1 {
+    font-size: 26px;
+    color: #ffffff;
+    font-family: "Courier New", monospace;
+    background-color: black;
+    font-style: italic;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 22px;
+    color: #ffffff;
+    font-family: cursive;
+}
+
+/* Estilos dos textos */
+p {
+    font-size: 16px;
+    color: #ffffff;
+    font-family: serif;
+}
+
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 14px;
+    color: #ffffff;
+    font-family: serif;
+}
+
+/* Configuração das seções */
+.section {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    backdrop-filter: blur(10px);
+}
+
+/* Botões com animação */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #271930;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: cursive;
+    transition: 0.3s ease-in-out;
+}
+
+/* Efeito hover nos botões */
+a:hover {
+    background: #402850;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Keyframes das animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesus é o único Caminho</title>
+    <link rel="icon" type="image/png" href="img.bt/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .title-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title-container h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .extra-buttons-title {
+            font-size: 22px;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .extra-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 10px;
+            max-width: 100%;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .button-container:hover {
+            transform: scale(1.05);
+        }
+
+        .button-container img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            background-color: #271930;
+            color: #ffffff;
+            font-weight: 600;
+            font-family: cursive;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 25px;
+            font-size: 16px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            color: #000000;
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="particles-js"></div>
+
+    
+
+    <div class="title-container">
+        <h1>"Porque a palavra de Deus é viva e eficaz..." (Hebreus 4:12)</h1>
+    </div>
+    
+    <div class="extra-buttons-title">Escolha uma das opções abaixo</div>
+
+    <div class="extra-buttons">
+        <div class="button-container">
+            <img src="img.bt/Leitura.jpg" alt="Bíblia sobre a mesa">
+            <button onclick="window.location.href='pagina1.html'">Ensinamentos</button>
+        </div>
+        <div class="button-container">
+            <img src="img.bt/orar.jpg" alt="Pessoa orando">
+            <button onclick="window.location.href='pagina3.html'">Oração e Jejum</button>
+        </div>
+        <div class="button-container">
+            <img src="img.bt/devocional.jpg" alt="Momento Devocional">
+            <button onclick="window.location.href='pagina2.html'">Devocional</button>
+        </div>
+        <div class="button-container">
+            <img src="img.bt/versi.jpg" alt="Versículos">
+            <button onclick="window.location.href='pagina4.html'">Versículos</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "repulse": { "distance": 100, "duration": 0.4 },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+</body>
+</html>
